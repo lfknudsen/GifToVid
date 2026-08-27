@@ -14,7 +14,7 @@ if ($null -eq $gifs) {
     $count = $gifs.Length
     Write-Host "Converting $count GIFs."
     foreach ($gif in $gifs) {
-        Write-Host $gif
+        Write-Host "Converting $gif"
         $output_name = [System.IO.Path]::GetFileNameWithoutExtension($gif)
         if ($null -eq $output_name) {
             Write-Host "Empty file-name for output of $gif"
