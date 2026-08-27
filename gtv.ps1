@@ -1,4 +1,12 @@
-$gifs = Get-ChildItem -Path .\*.gif -Force
+param (
+    [switch]$r
+)
+
+if ($r) {
+    $gifs = Get-ChildItem -Path .\*.gif -Recurse -Force
+} else {
+    $gifs = Get-ChildItem -Path .\*.gif -Force
+}
 if ($null -eq $gifs) {
     Write-Host "No .gif files in the current directory."
     exit 1
